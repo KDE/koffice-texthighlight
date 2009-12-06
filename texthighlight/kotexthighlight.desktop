@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Highlight plugin
+X-KDE-ServiceTypes=KOffice/Text-EditingPlugin
+Type=Service
+X-KDE-Library=kotexthighlight
+X-KoText-MinVersion=0
+X-Flake-PluginVersion=0.1
+X-KDE-PluginInfo-Author=Jonathan Schmidt-Dominé
+X-KDE-PluginInfo-Email=devel@the-user.org
+X-KDE-PluginInfo-Name=highlight
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Website=http://koffice.org/
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+
