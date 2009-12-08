@@ -1,5 +1,8 @@
 [Desktop Entry]
 Name=Highlight plugin
+Name[en_GB]=Highlight plugin
+Name[sv]=Markeringsinsticksprogram
+Name[uk]=Додаток підсвічування
 X-KDE-ServiceTypes=KOffice/Text-EditingPlugin
 Type=Service
 X-KDE-Library=kotexthighlight
