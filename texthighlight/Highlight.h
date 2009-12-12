@@ -30,7 +30,8 @@ class QModelIndex;
 
 namespace KTextEditor
 {
-	class Document;
+    class Document;
+    class View;
 }
 
 class KDialog;
@@ -39,28 +40,30 @@ class KListWidget;
 
 class Highlight : public KoTextEditingPlugin
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
     Highlight();
-	~Highlight();
+    ~Highlight();
 	
     void finishedWord(QTextDocument *document, int cursorPosition);
     void finishedParagraph(QTextDocument *document, int cursorPosition);
     void checkSection(QTextDocument *document, int startPosition, int endPosition);
 
 private slots:
-	void changeCategory(const QModelIndex& index);
-	void process();
+    void changeCategory(const QModelIndex& index);
+    void changeMode(const QModelIndex& mode);
+    void process();
 	
 private:
-    QTextCursor m_cursor;
+    int m_begin, m_end;
     QTextDocument *m_document;
-	KTextEditor::Document *m_kateDocument;
-	
-	KDialog *m_dialog;
-	KListWidget *m_categories;
-	KListWidget *m_modes;
-	QList<QStringList> m_modeTree;
+    KTextEditor::Document *m_kateDocument;
+
+    KDialog *m_dialog;
+    KListWidget *m_categories;
+    KListWidget *m_modes;
+    KTextEditor::View *m_view;
+    QList<QStringList> m_modeTree;
 };
 
 #endif
