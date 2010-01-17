@@ -55,9 +55,10 @@ Highlight::Highlight()
     m_categories->resize(150, 300);
     m_modes->resize(150, 300);
     m_view->resize(300, 300);
+    m_view->setMinimumWidth(300);
     m_categories->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
     m_modes->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
-    QSizePolicy viewPolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+    QSizePolicy viewPolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Preferred);
 //    viewPolicy.setHorizontalStretch(2);
     m_view->setSizePolicy(viewPolicy); 
     QHBoxLayout *layout = new QHBoxLayout;
@@ -66,6 +67,7 @@ Highlight::Highlight()
     layout->addWidget(m_view);
     widget->setLayout(layout);
     m_dialog->setMainWidget(widget);
+    kDebug() << m_view->sizeHint() << m_view->size();
     
     QStringList modes(m_kateDocument->highlightingModes());
     for(int i = 0; i != modes.size(); ++i)
@@ -153,6 +155,7 @@ void Highlight::process()
             cursor->setStyle(&KoCharacterStyle(*attr.attribute));
         }
     }
+    cursor->clearSelection();
     //delete cursor;
     
     emit stopMacro();
