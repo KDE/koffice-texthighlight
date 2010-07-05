@@ -17,9 +17,7 @@ set(highlight_SRCS
 kde4_add_plugin(kotexthighlight ${highlight_SRCS})
 
 target_link_libraries(kotexthighlight
-    QtCore
-    QtGui
-    kotext
+    ${KOTEXT_LIBS}
     ${KDE4_KDEUI_LIBS}
     ktexteditor
 )
