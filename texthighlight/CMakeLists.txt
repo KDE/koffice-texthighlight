@@ -1,12 +1,8 @@
 project(Highlight)
 
-cmake_minimum_required(VERSION 2.6)
-
-find_package(KDE4 REQUIRED)
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-include(KDE4Defaults)
 include(MacroLibrary)
-include_directories( ${KDE4_INCLUDES} ${QT_INCLUDES} ${KOTEXT_INCLUDES} ${KOMAIN_INCLUDES} )
+include_directories( ${KDE4_INCLUDES} ${QT_INCLUDES} ${KOTEXT_INCLUDES} )
 
 set(highlight_SRCS
     HighlightPlugin.cpp

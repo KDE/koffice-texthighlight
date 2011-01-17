@@ -32,7 +32,7 @@
 
 #include <KoTextEditor.h>
 #include <KoTextDocument.h>
-#include <styles/KoCharacterStyle.h>
+#include <KoCharacterStyle.h>
 
 #include <KTextEditor/Editor>
 #include <KTextEditor/Document>
