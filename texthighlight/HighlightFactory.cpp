@@ -28,7 +28,7 @@ HighlightFactory::HighlightFactory(QObject *parent)
     setTitle(i18n ("Highlight...") );
 }
 
-KoTextEditingPlugin *HighlightFactory::create() const
+KoTextEditingPlugin *HighlightFactory::create(KoResourceManager *) const
 {
     return new Highlight();
 }

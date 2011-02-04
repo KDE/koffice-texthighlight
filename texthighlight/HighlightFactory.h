@@ -29,7 +29,7 @@ public:
     explicit HighlightFactory(QObject *parent);
     ~HighlightFactory() {}
 
-    KoTextEditingPlugin *create() const;
+    KoTextEditingPlugin *create(KoResourceManager *docRm) const;
 };
 
 #endif
