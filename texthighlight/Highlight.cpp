@@ -31,8 +31,8 @@
 #include <KListWidget>
 
 #include <KoTextEditor.h>
-#include <KoTextDocument.h>
-#include <KoCharacterStyle.h>
+#include <KTextDocument.h>
+#include <KCharacterStyle.h>
 
 #include <KTextEditor/Editor>
 #include <KTextEditor/Document>
@@ -137,7 +137,7 @@ void Highlight::process()
     HighlightInterface *highlight = qobject_cast<HighlightInterface*>(m_kateDocument);
     Q_ASSERT(highlight != 0);
     int end = m_kateDocument->lines();
-    KoTextEditor *cursor = KoTextDocument(m_document).textEditor();
+    KoTextEditor *cursor = KTextDocument(m_document).textEditor();
     for(int i = 0; i != end; ++i)
     {
         QList<HighlightInterface::AttributeBlock> attributes = highlight->lineAttributes(i);
@@ -152,7 +152,7 @@ void Highlight::process()
             cursor->setPosition(cursor->position() + attr.length, QTextCursor::KeepAnchor);
             kDebug() << cursor->anchor() << cursor->position();
             kDebug() << cursor->selectedText();
-            cursor->setStyle(&KoCharacterStyle(*attr.attribute));
+            cursor->setStyle(&KCharacterStyle(*attr.attribute));
         }
     }
     cursor->clearSelection();

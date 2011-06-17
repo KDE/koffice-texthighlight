@@ -22,13 +22,13 @@
 #include <KLocale>
 
 HighlightFactory::HighlightFactory(QObject *parent)
-    : KoTextEditingFactory(parent, "kotexthighlight")
+    : KTextEditingFactory(parent, "kotexthighlight")
 {
     setShowInMenu(true);
     setTitle(i18n ("Highlight...") );
 }
 
-KoTextEditingPlugin *HighlightFactory::create(KoResourceManager *) const
+KTextEditingPlugin *HighlightFactory::create(KResourceManager *) const
 {
     return new Highlight();
 }

@@ -19,17 +19,17 @@
 #ifndef HIGHLIGHTFACTORY_H
 #define HIGHLIGHTFACTORY_H
 
-#include <KoTextEditingFactory.h>
+#include <KTextEditingFactory.h>
 
-class KoTextEditingPlugin;
+class KTextEditingPlugin;
 
-class HighlightFactory : public KoTextEditingFactory
+class HighlightFactory : public KTextEditingFactory
 {
 public:
     explicit HighlightFactory(QObject *parent);
     ~HighlightFactory() {}
 
-    KoTextEditingPlugin *create(KoResourceManager *docRm) const;
+    KTextEditingPlugin *create(KResourceManager *docRm) const;
 };
 
 #endif

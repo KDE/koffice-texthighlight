@@ -22,7 +22,7 @@
 #include <QStringList>
 #include <QTextCursor>
 
-#include <KoTextEditingPlugin.h>
+#include <KTextEditingPlugin.h>
 
 class QTextDocument;
 
@@ -38,7 +38,7 @@ class KDialog;
 class KPushButton;
 class KListWidget;
 
-class Highlight : public KoTextEditingPlugin
+class Highlight : public KTextEditingPlugin
 {
     Q_OBJECT
 public:

@@ -22,7 +22,7 @@
 #include <KPluginFactory>
 #include <KPluginLoader>
 
-#include <KoTextEditingRegistry.h>
+#include <KTextEditingRegistry.h>
 
 K_PLUGIN_FACTORY( HighlightPluginFactory, registerPlugin<HighlightPlugin>(); )
 K_EXPORT_PLUGIN( HighlightPluginFactory("HighlightPlugin") )
@@ -30,7 +30,7 @@ K_EXPORT_PLUGIN( HighlightPluginFactory("HighlightPlugin") )
 HighlightPlugin::HighlightPlugin( QObject *parent, const QVariantList& )
     : QObject(parent)
 {
-    KoTextEditingRegistry::instance()->add( new HighlightFactory(parent));
+    KTextEditingRegistry::instance()->add( new HighlightFactory(parent));
 }
 
 #include "HighlightPlugin.moc"
