@@ -152,14 +152,15 @@ void Highlight::process()
             cursor->setPosition(cursor->position() + attr.length, QTextCursor::KeepAnchor);
             kDebug() << cursor->anchor() << cursor->position();
             kDebug() << cursor->selectedText();
-            cursor->setStyle(&KCharacterStyle(*attr.attribute));
+            KCharacterStyle charStyle(*attr.attribute);
+            cursor->setStyle(&charStyle);
         }
     }
     cursor->clearSelection();
     //delete cursor;
-    
+
     emit stopMacro();
-    
+
     m_dialog->close();
 }
 
